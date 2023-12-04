@@ -11,22 +11,29 @@ const listarNomeUsuario = () => {
     let pizzaria = tonnyPizzaria.usuario.informacoes
     let arrayUsuario = []
 
-    pizzaria.forEach( nome => {
-        arrayUsuario.push(informacoes.nome)        
+    pizzaria.forEach( (nome) => {
+        arrayUsuario.push(nome.nome)        
     });
 
     return arrayUsuario
 }
 
-// const listarUsuario=function(){
-//     let arrayUsuario=[]
-//     let contador=0
-//     while(contador<tonnyPizzaria.usuario.informacoes.length){
-//         arrayUsuario.push(tonnyPizzaria.usuario.informacoes[contador].nome)
-//         contador++
-//     }
-//     return arrayUsuario
-// }
+const listarNomeProduto = () => {
+    let pizzaria = tonnyPizzaria.produto.informacoes
+    let arrayNome = []
+    let arrayPreco = []
+    let jsonProduto = {}
 
-// console.log(listarUsuario())
-console.log(listarNomeUsuario())
+    pizzaria.forEach( (produto) =>{
+        arrayNome.push(produto.nome)
+        arrayPreco.push(produto.preco)
+    } )
+
+    jsonProduto.nome = arrayNome
+    jsonProduto.preco = arrayPreco
+
+    return jsonProduto
+}
+
+// console.log(listarNomeUsuario())
+console.log(listarNomeProduto())
