@@ -641,3 +641,7 @@ var produto = {
         }
     ]
 }
+
+module.exports = {
+    usuario, categoria, produto
+}
