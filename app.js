@@ -19,7 +19,6 @@ app.use((request, response, next) => {
     response.header('Access-Control-Allow-Methods', 'GET')
 
     app.use(cors())
-
     next()
 })
 
