@@ -18,6 +18,20 @@ const listarNomeUsuario = () => {
     return arrayUsuario
 }
 
+const listarDadosUsuario = () => {
+    let pizzaria = tonnyPizzaria.usuario.informacoes
+    let arrayUsuario = []
+
+    pizzaria.forEach( (dados) => {
+        arrayUsuario.push(dados.nome)  
+        arrayUsuario.push(dados.email)
+        arrayUsuario.push(dados.telefone)
+        arrayUsuario.push(dados.endereco)      
+    });
+
+    return arrayUsuario
+}
+
 const listarNomeProduto = () => {
     let pizzaria = tonnyPizzaria.produto.informacoes
     let arrayNome = []
@@ -35,5 +49,28 @@ const listarNomeProduto = () => {
     return jsonProduto
 }
 
+const listarCategorias = () => {
+    let categorias = tonnyPizzaria.categoria.informacoes
+    let json = {}
+    let array = []
+    categorias.forEach((categoria) => {
+        let objCategoria = {
+            nome: categoria.nome
+        }
+        array.push(objCategoria)
+    })
+    json.categorias = array
+    return json
+}
+
 // console.log(listarNomeUsuario())
-console.log(listarNomeProduto())
+// console.log(listarDadosUsuario())
+// console.log(listarNomeProduto())
+// console.log(listarCategorias())
+
+module.exports = {
+    listarCategorias,
+    listarDadosUsuario,
+    listarNomeUsuario,
+    listarNomeProduto
+}
